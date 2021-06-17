@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -euo pipefail
 #//////////////////////////////////////////////////////////////
 #//   ____                                                   //
 #//  | __ )  ___ _ __  ___ _   _ _ __   ___ _ __ _ __   ___  //
@@ -36,6 +36,7 @@ docker pull alpine:3.10
 docker pull alpine:3.11
 docker pull alpine:3.12
 docker pull alpine:3.13
+docker pull alpine:3.14
 docker pull alpine:latest
 
 

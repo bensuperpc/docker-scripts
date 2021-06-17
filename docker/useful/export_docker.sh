@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 #//////////////////////////////////////////////////////////////
 #//   ____                                                   //
 #//  | __ )  ___ _ __  ___ _   _ _ __   ___ _ __ _ __   ___  //
@@ -18,4 +19,7 @@
 #//  CPU: ALL                                                //
 #//                                                          //
 #//////////////////////////////////////////////////////////////
-docker export $1 | 7z a -si -m0=lzma2 -mx=9 -mmt -ms=on -aoa $1.tar.7z
+for var in "$@"
+do
+    docker export $var | 7z a -si -m0=lzma2 -mx=9 -mmt -ms=on -aoa $var.tar.7z
+done

@@ -1,3 +1,5 @@
+#!/bin/bash
+set -euo pipefail
 docker run \
     -e "BRANCH_NAME=lineage-18.1" \
     -e "DEVICE_LIST=guacamole" \

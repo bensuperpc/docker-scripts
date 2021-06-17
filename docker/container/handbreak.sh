@@ -1,3 +1,5 @@
+#!/bin/bash
+set -euo pipefail
 docker run -d \
     --name=handbrake \
     -p 5800:5800 \
