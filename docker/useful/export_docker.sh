@@ -11,7 +11,7 @@ set -euo pipefail
 #//                                                          //
 #//  Script, 2020                                            //
 #//  Created: 20, December, 2020                             //
-#//  Modified: 20, December, 2020                            //
+#//  Modified: 21, June, 2021                                //
 #//  file: -                                                 //
 #//  -                                                       //
 #//  Source: -                                               //
@@ -21,5 +21,6 @@ set -euo pipefail
 #//////////////////////////////////////////////////////////////
 for var in "$@"
 do
-    docker export $var | 7z a -si -m0=lzma2 -mx=9 -mmt -ms=on -aoa $var.tar.7z
+    #docker export $var | 7z a -si -m0=lzma2 -mx=9 -mmt -ms=on -aoa $var.tar.7z
+    docker export $var | xz -e9 -T0 > $var.tar.xz
 done

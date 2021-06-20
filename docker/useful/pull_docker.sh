@@ -11,7 +11,7 @@ set -euo pipefail
 #//                                                          //
 #//  Script, 2021                                            //
 #//  Created: 01, June, 2021                                 //
-#//  Modified: 01, June, 2021                                //
+#//  Modified: 21, June, 2021                                //
 #//  file: -                                                 //
 #//  -                                                       //
 #//  Source:                                                 //
@@ -26,11 +26,13 @@ docker pull debian:buster
 docker pull debian:bullseye
 docker pull debian:latest
 
+docker pull ubuntu:14.04
 docker pull ubuntu:16.04
 docker pull ubuntu:18.04
 docker pull ubuntu:20.04
 docker pull ubuntu:latest
 
+docker pull alpine:3.8
 docker pull alpine:3.9
 docker pull alpine:3.10
 docker pull alpine:3.11
@@ -39,8 +41,16 @@ docker pull alpine:3.13
 docker pull alpine:3.14
 docker pull alpine:latest
 
+docker pull python:alpine
+docker pull python:3.9.5-alpine3.13
+docker pull python:3.9.5-alpine3.12
+docker pull python:3.8.10-alpine3.13
+docker pull python:3.8.10-alpine3.12
 
-#docker pull python:buster
-#docker pull python:latest
+docker pull tensorflow/tensorflow:2.5.0-gpu
+docker pull tensorflow/tensorflow:2.5.0
+docker pull tensorflow/tensorflow:latest
+docker pull tensorflow/tensorflow:latest-gpu
+
 #docker pull gcc:latest
 #docker pull tensorflow/tensorflow:latest
