@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -euo pipefail
 #//////////////////////////////////////////////////////////////
 #//   ____                                                   //
@@ -11,7 +11,7 @@ set -euo pipefail
 #//                                                          //
 #//  Script, 2021                                            //
 #//  Created: 30, May, 2021                                  //
-#//  Modified: 17, july, 2021                                //
+#//  Modified: 24, july, 2021                                //
 #//  file: -                                                 //
 #//  -                                                       //
 #//  Source: https://github.com/axiom-data-science/rsync-server                                               //

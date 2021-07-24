@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -euo pipefail
 #//////////////////////////////////////////////////////////////
 #//   ____                                                   //
@@ -11,14 +11,15 @@ set -euo pipefail
 #//                                                          //
 #//  Script, 2021                                            //
 #//  Created: 27, May, 2021                                  //
-#//  Modified: 27, May, 2021                                 //
+#//  Modified: 24, July, 2021                                //
 #//  file: -                                                 //
 #//  -                                                       //
 #//  Source: -                                               //
 #//  OS: ALL                                                 //
 #//  CPU: ALL                                                //
 #//                                                          //
-#//////////////////////////////////////////////////////////////
+#////////////////////////////////////////////////////////////// 
+
 mkdir -p ~/.config
 docker run -it --name code-server -p 127.0.0.1:8080:8080 \
     -v "$HOME/.config:/home/coder/.config" \
