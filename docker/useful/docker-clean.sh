@@ -9,8 +9,8 @@ set -euo pipefail
 #//                             |_|             |_|          //
 #//////////////////////////////////////////////////////////////
 #//                                                          //
-#//  Script, 2020                                            //
-#//  Created: 21, November, 2020                             //
+#//  Script, 2021                                            //
+#//  Created: 27, May, 2021                                  //
 #//  Modified: 24, July, 2021                                //
 #//  file: -                                                 //
 #//  -                                                       //
@@ -18,9 +18,7 @@ set -euo pipefail
 #//  OS: ALL                                                 //
 #//  CPU: ALL                                                //
 #//                                                          //
-#//////////////////////////////////////////////////////////////
-for var in "$@"
-do
-    #docker save $var | 7z a -si -m0=lzma2 -mx=9 -mmt -ms=on -aoa $var.tar.7z
-    docker save $var | xz -e9 -T0 > $var.tar.xz
-done
+#////////////////////////////////////////////////////////////// 
+
+docker system prune -f
+docker image prune --all --filter until=360h

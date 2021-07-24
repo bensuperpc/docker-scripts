@@ -10,7 +10,7 @@ set -euo pipefail
 #//////////////////////////////////////////////////////////////
 #//                                                          //
 #//  Script, 2021                                            //
-#//  Created: 27, May, 2021                                  //
+#//  Created: 21, June, 2021                                 //
 #//  Modified: 24, July, 2021                                //
 #//  file: -                                                 //
 #//  -                                                       //
@@ -18,6 +18,14 @@ set -euo pipefail
 #//  OS: ALL                                                 //
 #//  CPU: ALL                                                //
 #//                                                          //
-#////////////////////////////////////////////////////////////// 
+#//////////////////////////////////////////////////////////////
 
-docker system prune -f
+if (( $# >= 1 )); then
+    for var in "$@"
+    do
+        xz -d -k < $var | docker load
+    done
+else
+    echo "Usage: ${0##*/} <docker image 1> <docker image 2> ...."
+    exit 1
+fi

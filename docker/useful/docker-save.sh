@@ -9,8 +9,8 @@ set -euo pipefail
 #//                             |_|             |_|          //
 #//////////////////////////////////////////////////////////////
 #//                                                          //
-#//  Script, 2021                                            //
-#//  Created: 21, June, 2021                                 //
+#//  Script, 2020                                            //
+#//  Created: 21, November, 2020                             //
 #//  Modified: 24, July, 2021                                //
 #//  file: -                                                 //
 #//  -                                                       //
@@ -19,7 +19,14 @@ set -euo pipefail
 #//  CPU: ALL                                                //
 #//                                                          //
 #//////////////////////////////////////////////////////////////
-for var in "$@"
-do
-    xz -d -k < $var | docker load
-done
+
+if (( $# >= 1 )); then
+    for var in "$@"
+    do
+        #docker save $var | 7z a -si -m0=lzma2 -mx=9 -mmt -ms=on -aoa $var.tar.7z
+        docker save $var | xz -e9 -T0 > $var.tar.xz
+    done
+else
+    echo "Usage: ${0##*/} <docker image 1> <docker image 2> ...."
+    exit 1
+fi
