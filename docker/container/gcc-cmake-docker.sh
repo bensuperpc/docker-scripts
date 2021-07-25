@@ -28,9 +28,13 @@ case "$1" in
         TAG_VERSION=$2
         shift
         shift
-        ;;&
+        ;;
     -h)
         echo "Usage: ${0##*/} [-version gcc-11 gcc -o hello hello.c]"
+        exit 1
+        ;;
+    *)
+        echo "Usage: ${0##*/} [-version 11.1 gcc -o hello hello.c]"
         exit 1
         ;;
 esac
