@@ -31,7 +31,7 @@ case "$1" in
         ;;
     -h)
         echo "Usage: ${0##*/} [-version gcc-11 gcc -o hello hello.c]"
-        exit 1
+        exit 0
         ;;
     *)
         echo "Usage: ${0##*/} [-version 11.1 gcc -o hello hello.c]"
