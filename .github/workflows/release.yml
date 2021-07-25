@@ -1,0 +1,20 @@
+name: "tagged-release"
+
+on:
+  push:
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+*"
+  workflow_dispatch:
+
+jobs:
+  tagged-release:
+    name: "Tagged Release"
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: "📥 Checkout Code"
+        uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
+          fetch-depth: 0
+      - name: "✅ Check bash syntax"
+        run: find . -type f -name "*.sh" ! -path "*./git/*" -print0 | xargs -0 -P"$(nproc)"  -I{} bash -n "{}"

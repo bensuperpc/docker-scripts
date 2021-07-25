@@ -1,0 +1,30 @@
+name: scripts
+
+on:
+  push:
+    branches:
+      - '*'
+    paths-ignore:
+      - '**/README.md'
+  pull_request:
+    branches:
+      - '*'
+  schedule:
+    - cron: '0 22 */7 * *'  # every 7 days https://crontab.guru/#0_7_*_*_1
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: scripts
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    steps:
+      - name: "📥 Checkout Code"
+        uses: actions/checkout@v2.3.4
+        with:
+          submodules: 'recursive'
+          fetch-depth: 0
+      - name: "✅ Check bash syntax"
+        run: find . -type f -name "*.sh" ! -path "*./git/*" -print0 | xargs -0 -P"$(nproc)"  -I{} bash -n "{}"
