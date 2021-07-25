@@ -24,7 +24,7 @@ if (( $# >= 1 )); then
     for var in "$@"
     do
         #docker export $var | 7z a -si -m0=lzma2 -mx=9 -mmt -ms=on -aoa $var.tar.7z
-        docker export $var | xz -e9 -T0 > $var.tar.xz
+        docker export "$var" | xz -e9 -T0 > "$var".tar.xz
     done
 else
     echo "Usage: ${0##*/} <docker image 1> <docker image 2> ...."

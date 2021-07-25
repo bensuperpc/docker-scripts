@@ -28,10 +28,9 @@ usage() {
   exit 1
 }
 
-if [ -z $VOLUME_NAME ]
-then
+if (( $# == 0 )); then
   echo "Error: missing container name parameter."
   usage
 fi
 
-docker run --rm  --volume ${VOLUME_NAME}:/dbdata --volume $(pwd):/backup ubuntu  tar xvf /backup/${VOLUME_NAME}.tar -C /dbdata --strip 1
+docker run --rm  --volume "${VOLUME_NAME}":/dbdata --volume $(pwd):/backup ubuntu  tar xvf /backup/"${VOLUME_NAME}".tar -C /dbdata --strip 1

@@ -23,7 +23,7 @@ set -euo pipefail
 if (( $# >= 1 )); then
     for var in "$@"
     do
-        docker import $var
+        docker import "$var"
     done
 else
     echo "Usage: ${0##*/} <docker image 1> <docker image 2> ...."
