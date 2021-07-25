@@ -28,13 +28,13 @@ usage() {
   exit 1
 }
 
-if [ -z $CONTAINER_NAME ]
+if [ -z "$CONTAINER_NAME" ]
 then
   echo "Error: missing container/volume name parameter."
   usage
 fi
 #-e ENABLE_RCON=false -e RCON_PASSWORD=minecraft -e RCON_PORT=28016 \
-docker run -d -v ${VOLUME_NAME}:/data \
+docker run -d -v "${VOLUME_NAME}":/data \
     -e TYPE=PAPER -e MEMORY=4G -e ONLINE_MODE=true \
     -e OPS=Bensuperpc -e OVERRIDE_SERVER_PROPERTIES=true \
     -e BUILD_FROM_SOURCE=false -e VERSION=1.16.5 \
@@ -48,4 +48,4 @@ docker run -d -v ${VOLUME_NAME}:/data \
     -e USE_AIKAR_FLAGS=true -e USE_LARGE_PAGES=false \
     -e ENABLE_AUTOPAUSE=false -e GUI=false \
     -e MOTD="My Server" \
-    --name ${CONTAINER_NAME} itzg/minecraft-server:latest
+    --name "${CONTAINER_NAME}" itzg/minecraft-server:latest

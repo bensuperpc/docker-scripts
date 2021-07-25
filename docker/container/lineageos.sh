@@ -11,7 +11,7 @@ set -euo pipefail
 #//                                                          //
 #//  Script, 2021                                            //
 #//  Created: 27, May, 2021                                  //
-#//  Modified: 24, July, 2021                                //
+#//  Modified: 25, July, 2021                                //
 #//  file: -                                                 //
 #//  -                                                       //
 #//  Source: -                                               //
@@ -26,10 +26,10 @@ docker run \
     -e "SIGN_BUILDS=true" \
     -e "SIGNATURE_SPOOFING=restricted" \
     -e "CUSTOM_PACKAGES=GmsCore GsfProxy FakeStore MozillaNlpBackend NominatimNlpBackend com.google.android.maps.jar FDroid FDroidPrivilegedExtension " \
-    -v "/home/bensuperpc/lineage/lineage:/srv/src" \
-    -v "/home/bensuperpc/lineage/zips:/srv/zips" \
-    -v "/home/bensuperpc/lineage/logs:/srv/logs" \
-    -v "/home/bensuperpc/lineage/cache:/srv/ccache" \
-    -v "/home/bensuperpc/lineage/keys:/srv/keys" \
-    -v "/home/bensuperpc/lineage/manifests:/srv/local_manifests" \
+    -v "$HOME/lineage/lineage:/srv/src" \
+    -v "$HOME/lineage/zips:/srv/zips" \
+    -v "$HOME/lineage/logs:/srv/logs" \
+    -v "$HOME/lineage/cache:/srv/ccache" \
+    -v "$HOME/lineage/keys:/srv/keys" \
+    -v "$HOME/lineage/manifests:/srv/local_manifests" \
     lineageos4microg/docker-lineage-cicd

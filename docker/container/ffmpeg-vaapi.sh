@@ -21,4 +21,4 @@ set -euo pipefail
 #//////////////////////////////////////////////////////////////
 CONTAINER_LABEL=4.4-vaapi
 
-docker run --device /dev/dri:/dev/dri -v $(pwd):$(pwd) -w $(pwd) jrottenberg/ffmpeg:${CONTAINER_LABEL} $@
+docker run --device /dev/dri:/dev/dri -v "$(pwd)":"$(pwd)" -w "$(pwd)" jrottenberg/ffmpeg:"${CONTAINER_LABEL}" "$@"

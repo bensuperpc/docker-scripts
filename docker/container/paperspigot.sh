@@ -20,6 +20,8 @@ set -euo pipefail
 #//                                                          //
 #//////////////////////////////////////////////////////////////
 
+GAME_VERSION=1.17
+
 docker run -it \
     -p 25565:25565 \
     -v ~/minecraft/config:/opt/minecraft/config \
@@ -27,4 +29,4 @@ docker run -it \
     -v ~/minecraft/plugins:/opt/minecraft/plugins \
     -v ~/minecraft/data:/opt/minecraft/data \
     -v ~/minecraft/logs:/opt/minecraft/logs \
-    felixklauke/paperspigot:1.16.5
+    felixklauke/paperspigot:"$GAME_VERSION"

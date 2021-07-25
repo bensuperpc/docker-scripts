@@ -11,7 +11,7 @@ set -euo pipefail
 #//                                                          //
 #//  Script, 2021                                            //
 #//  Created: 29, May, 2021                                  //
-#//  Modified: 24, July, 2021                                //
+#//  Modified: 25, July, 2021                                //
 #//  file: -                                                 //
 #//  -                                                       //
 #//  Source: -                                               //
@@ -21,4 +21,4 @@ set -euo pipefail
 #//////////////////////////////////////////////////////////////
 CONTAINER_LABEL=4.4-nvidia
 
-docker run --runtime=nvidia -v $(pwd):$(pwd) -w $(pwd) jrottenberg/ffmpeg:${CONTAINER_LABEL} $@
+docker run --runtime=nvidia -v "$(pwd)":"$(pwd)" -w "$(pwd)" jrottenberg/ffmpeg:"${CONTAINER_LABEL}" "$@"

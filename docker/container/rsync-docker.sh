@@ -11,7 +11,7 @@ set -euo pipefail
 #//                                                          //
 #//  Script, 2021                                            //
 #//  Created: 30, May, 2021                                  //
-#//  Modified: 24, july, 2021                                //
+#//  Modified: 25, july, 2021                                //
 #//  file: -                                                 //
 #//  -                                                       //
 #//  Source: https://github.com/axiom-data-science/rsync-server                                               //
@@ -20,4 +20,4 @@ set -euo pipefail
 #//                                                          //
 #//////////////////////////////////////////////////////////////
 
-docker run -ti -p 2222:22 -v ${HOME}/.ssh/id_rsa.pub:/etc/authorized_keys/bensuperpc:ro -v $(pwd)/keys/:/etc/ssh/keys -v $(pwd)/data/:/data/ -e SSH_USERS="bensuperpc:1000:1000" -e RSYNC_MODE=true  docker.io/panubo/sshd:1.4.0
+docker run -ti -p 2222:22 -v "${HOME}"/.ssh/id_rsa.pub:/etc/authorized_keys/bensuperpc:ro -v "$(pwd)"/keys/:/etc/ssh/keys -v "$(pwd)"/data/:/data/ -e SSH_USERS="bensuperpc:1000:1000" -e RSYNC_MODE=true  docker.io/panubo/sshd:1.4.0

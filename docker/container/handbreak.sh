@@ -11,7 +11,7 @@ set -euo pipefail
 #//                                                          //
 #//  Script, 2021                                            //
 #//  Created: 27, May, 2021                                  //
-#//  Modified: 24, July, 2021                                //
+#//  Modified: 25, July, 2021                                //
 #//  file: -                                                 //
 #//  -                                                       //
 #//  Source: -                                               //
@@ -24,7 +24,7 @@ docker run -d \
     --name=handbrake \
     -p 5800:5800 \
     -v /docker/appdata/handbrake:/config:rw \
-    -v $HOME:/storage:ro \
-    -v $HOME/HandBrake/watch:/watch:rw \
-    -v $HOME/HandBrake/output:/output:rw \
+    -v "$HOME":/storage:ro \
+    -v "$HOME"/HandBrake/watch:/watch:rw \
+    -v "$HOME"/HandBrake/output:/output:rw \
     jlesage/handbrake

@@ -41,4 +41,4 @@ then
     exit 1
 fi
 
-docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp ${DOCKER_IMAGE}:${TAG_VERSION} $@
+docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp "${DOCKER_IMAGE}":"${TAG_VERSION}" "$@"

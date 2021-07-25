@@ -21,4 +21,4 @@ set -euo pipefail
 #//////////////////////////////////////////////////////////////
 CONTAINER_LABEL=4.4-ubuntu
 
-docker run -v $(pwd):$(pwd) -w $(pwd) jrottenberg/ffmpeg:${CONTAINER_LABEL} $@
+docker run -v "$(pwd)":"$(pwd)" -w "$(pwd)" jrottenberg/ffmpeg:"${CONTAINER_LABEL}" "$@"

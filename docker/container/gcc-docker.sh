@@ -11,7 +11,7 @@ set -euo pipefail
 #//                                                          //
 #//  Script, 2021                                            //
 #//  Created: 27, May, 2021                                  //
-#//  Modified: 24, July, 2021                                //
+#//  Modified: 25, July, 2021                                //
 #//  file: -                                                 //
 #//  -                                                       //
 #//  Source: -                                               //
@@ -41,4 +41,4 @@ then
     exit 1
 fi
 
-docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp ${DOCKER_IMAGE}:${TAG_VERSION} $@
+docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp "${DOCKER_IMAGE}":"${TAG_VERSION}" "$@"
