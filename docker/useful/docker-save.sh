@@ -19,13 +19,9 @@
 #//                                                          //
 #//////////////////////////////////////////////////////////////
 
-if (( $# >= 1 )); then
-    for var in "$@"
-    do
-        #docker save $var | 7z a -si -m0=lzma2 -mx=9 -mmt -ms=on -aoa $var.tar.7z
-        docker save $var | xz -e9 -T0 > $var.tar.xz
-    done
+if (( $# >= 2 )); then
+    docker save "$1" | xz -e9 -v -T0 > "$2".tar.xz
 else
-    echo "Usage: ${0##*/} <docker image 1> <docker image 2> ...."
+    echo "Usage: ${0##*/} <docker image> <output file> ...."
     exit 1
 fi

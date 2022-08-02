@@ -19,37 +19,28 @@
 #//                                                          //
 #//////////////////////////////////////////////////////////////
 
-docker pull debian:jessie
-docker pull debian:stretch
-docker pull debian:buster
 docker pull debian:bullseye
+docker pull debian:bookworm
 docker pull debian:latest
 
-docker pull ubuntu:14.04
-docker pull ubuntu:16.04
 docker pull ubuntu:18.04
 docker pull ubuntu:20.04
+docker pull ubuntu:22.04
 docker pull ubuntu:latest
 
-docker pull alpine:3.8
-docker pull alpine:3.9
-docker pull alpine:3.10
-docker pull alpine:3.11
-docker pull alpine:3.12
-docker pull alpine:3.13
 docker pull alpine:3.14
+docker pull alpine:3.15
+docker pull alpine:3.16
 docker pull alpine:latest
 
+docker pull python:debian
 docker pull python:alpine
-docker pull python:3.9.5-alpine3.13
-docker pull python:3.9.5-alpine3.12
-docker pull python:3.8.10-alpine3.13
-docker pull python:3.8.10-alpine3.12
+docker pull python:3.8.13-alpine3.16
+docker pull python:3.9.13-alpine3.16
+docker pull python:3.10.5-alpine3.16
 
-docker pull tensorflow/tensorflow:2.5.0-gpu
-docker pull tensorflow/tensorflow:2.5.0
+docker pull tensorflow/tensorflow:2.9.1-gpu
+docker pull tensorflow/tensorflow:2.9.1
 docker pull tensorflow/tensorflow:latest
 docker pull tensorflow/tensorflow:latest-gpu
 
-#docker pull gcc:latest
-#docker pull tensorflow/tensorflow:latest

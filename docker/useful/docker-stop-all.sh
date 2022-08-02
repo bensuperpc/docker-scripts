@@ -8,24 +8,15 @@
 #//                             |_|             |_|          //
 #//////////////////////////////////////////////////////////////
 #//                                                          //
-#//  Script, 2021                                            //
-#//  Created: 27, May, 2021                                  //
-#//  Modified: 24, July, 2021                                //
+#//  Script, 2022                                            //
+#//  Created: 02, August, 2021                               //
+#//  Modified: 02, August, 2021                              //
 #//  file: -                                                 //
 #//  -                                                       //
 #//  Source: -                                               //
 #//  OS: ALL                                                 //
 #//  CPU: ALL                                                //
 #//                                                          //
-#//////////////////////////////////////////////////////////////
+#////////////////////////////////////////////////////////////// 
 
-GAME_VERSION=1.17
-
-docker run -it \
-    -p 25565:25565 \
-    -v ~/minecraft/config:/opt/minecraft/config \
-    -v ~/minecraft/worlds:/opt/minecraft/worlds \
-    -v ~/minecraft/plugins:/opt/minecraft/plugins \
-    -v ~/minecraft/data:/opt/minecraft/data \
-    -v ~/minecraft/logs:/opt/minecraft/logs \
-    felixklauke/paperspigot:"$GAME_VERSION"
+docker kill $(docker ps -q)

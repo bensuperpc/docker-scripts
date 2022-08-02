@@ -33,3 +33,4 @@ if (( $# == 0 )); then
 fi
 
 docker run --rm  --volume "${VOLUME_NAME}":/dbdata --volume "$(pwd)":/backup ubuntu  tar xvf /backup/"${VOLUME_NAME}".tar -C /dbdata --strip 1
+#docker run --rm  --volume "${VOLUME_NAME}":/dbdata --volume "$(pwd)":/backup ubuntu tar xvf /backup/"${VOLUME_NAME}".tar.xz -C /dbdata --strip 1

@@ -18,6 +18,6 @@
 #//  CPU: ALL                                                //
 #//                                                          //
 #//////////////////////////////////////////////////////////////
-CONTAINER_LABEL=4.4-ubuntu
+CONTAINER_LABEL=snapshot-ubuntu
 
 docker run -v "$(pwd)":"$(pwd)" -w "$(pwd)" jrottenberg/ffmpeg:"${CONTAINER_LABEL}" "$@"

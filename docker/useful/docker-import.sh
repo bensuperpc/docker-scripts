@@ -22,9 +22,9 @@
 if (( $# >= 1 )); then
     for var in "$@"
     do
-        docker import "$var"
+        xz -v -d -k < "$var" | docker import
     done
 else
-    echo "Usage: ${0##*/} <docker image 1> <docker image 2> ...."
+    echo "Usage: ${0##*/} <docker container 1> <docker container 2> ...."
     exit 1
 fi

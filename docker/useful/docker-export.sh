@@ -10,7 +10,7 @@
 #//                                                          //
 #//  Script, 2020                                            //
 #//  Created: 20, December, 2020                             //
-#//  Modified: 24, July, 2021                                //
+#//  Modified: 02, August, 2022                              //
 #//  file: -                                                 //
 #//  -                                                       //
 #//  Source: -                                               //
@@ -19,13 +19,9 @@
 #//                                                          //
 #//////////////////////////////////////////////////////////////
 
-if (( $# >= 1 )); then
-    for var in "$@"
-    do
-        #docker export $var | 7z a -si -m0=lzma2 -mx=9 -mmt -ms=on -aoa $var.tar.7z
-        docker export "$var" | xz -e9 -T0 > "$var".tar.xz
-    done
+if (( $# >= 2 )); then
+    docker export "$1" | xz -e9 -v -T0 > "$2".tar.xz
 else
-    echo "Usage: ${0##*/} <docker image 1> <docker image 2> ...."
+    echo "Usage: ${0##*/} <docker image> <output file> ...."
     exit 1
 fi

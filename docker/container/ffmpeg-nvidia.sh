@@ -18,6 +18,6 @@
 #//  CPU: ALL                                                //
 #//                                                          //
 #//////////////////////////////////////////////////////////////
-CONTAINER_LABEL=4.4-nvidia
+CONTAINER_LABEL=snapshot-nvidia
 
 docker run --runtime=nvidia -v "$(pwd)":"$(pwd)" -w "$(pwd)" jrottenberg/ffmpeg:"${CONTAINER_LABEL}" "$@"
